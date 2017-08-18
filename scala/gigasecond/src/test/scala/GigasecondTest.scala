@@ -21,37 +21,32 @@ class GigasecondTests extends FunSuite with Matchers {
   }
 
   test("after epoch time") {
-    pending
     val input = date("1977-06-13")
     val expected = dateTime("2009-02-19T01:46:40")
     Gigasecond.addGigaseconds(input) should be (expected)
   }
 
   test("before epoch time") {
-    pending
     val input = date("1959-07-19")
     val expected = dateTime("1991-03-27T01:46:40")
     Gigasecond.addGigaseconds(input) should be (expected)
   }
 
   test("full time specified") {
-    pending
     val input = dateTime("2015-01-24T22:00:00")
     val expected = dateTime("2046-10-02T23:46:40")
     Gigasecond.addGigaseconds(input) should be (expected)
   }
 
   test("full time with day roll-over") {
-    pending
     val input = dateTime("2015-01-24T23:59:59")
     val expected = dateTime("2046-10-03T01:46:39")
     Gigasecond.addGigaseconds(input) should be (expected)
   }
 
   test("your birthday") {
-    pending
-    val yourBirthday = date(???)
-    val expected = dateTime(???)
+    val yourBirthday = date("2015-01-24")
+    val expected = dateTime("2046-10-02T01:46:40")
     Gigasecond.addGigaseconds(yourBirthday) should be (expected)
   }
 }
